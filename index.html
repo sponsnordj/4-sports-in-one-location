@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>موقع التدريب الرياضي</title>
+    <title>منصة التدريب الرياضي المتكاملة</title>
     <style>
         /* تصميم الموقع والألوان */
         body {
@@ -66,6 +66,7 @@
             border-left: 5px solid #e74c3c;
             margin-top: 20px;
             animation: fadeIn 0.5s ease;
+            text-align: right; /* محاذاة النص لليمين للشرح */
         }
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(10px); }
@@ -74,32 +75,43 @@
         .exercise-section h2 {
             color: #f9d423;
             margin-top: 0;
+            text-align: center;
         }
         .exercises-list {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
+            grid-template-columns: 1fr;
+            gap: 20px;
             margin-top: 20px;
         }
-        .exercise-item {
+        .exercise-card {
             background-color: #383838;
-            padding: 15px;
+            padding: 20px;
             border-radius: 8px;
-            font-size: 1.1rem;
             border: 1px solid #444;
-            cursor: pointer;
-            transition: background 0.2s;
         }
-        .exercise-item:hover {
-            background-color: #4e4e4e;
-            color: #f9d423;
+        .exercise-card h3 {
+            color: #ff4e50;
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+        .exercise-card p {
+            color: #dddddd;
+            font-size: 1rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+        .exercise-card ul {
+            margin: 10px 0 0 0;
+            padding-right: 20px;
+            color: #b3b3b3;
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>أهلاً وسمهلاً بكم أيها الرياضيون 👋</h1>
+        <h1>أهلاً وسهلاً بكم أيها الرياضيون 👋</h1>
         <p>اختر الرياضة التي تريد تعلمها وابدأ رحلتك التدريبية اليوم</p>
     </header>
 
@@ -113,37 +125,115 @@
         </div>
 
         <div id="football" class="exercise-section">
-            <h2>خيارات تعلم كرة القدم</h2>
+            <h2>برنامج تدريب كرة القدم ⚽</h2>
             <div class="exercises-list">
-                <div class="exercise-item">🏃‍♂️ تمارين السرعة</div>
-                <div class="exercise-item">⚽ تمارين الكرة</div>
-                <div class="exercise-item">🏋️‍♂️ تمارين القوة البدنية</div>
+                <div class="exercise-card">
+                    <h3>🏃‍♂️ أولاً: تمارين السرعة والرشاقة</h3>
+                    <ul>
+                        <li><strong>الجري الارتدادي (Shuttle Runs):</strong> الجري بأقصى سرعة لمسافة 10 أمتار، ثم العودة للخلف لزيادة التوازن والتحكم السريع.</li>
+                        <li><strong>تمارين السلم الرياضي (Agility Ladder):</strong> التحرك السريع بالقدمين داخل وخارج مربعات السلم لتطوير خفة حركة القدمين (Footwork).</li>
+                        <li><strong>الانطلاقات السريعة (Sprints):</strong> الجري بأقصى قوة لمسافة 30 متراً لتطوير الانفجارية العضلية.</li>
+                    </ul>
+                </div>
+                <div class="exercise-card">
+                    <h3>⚽ ثانياً: تمارين التحكم بالكرة (المهارة)</h3>
+                    <ul>
+                        <li><strong>المراوغة بين الأقماع (Cone Dribbling):</strong> وضع 5 أقماع على خط مستقيم والمراوغة بينها باستخدام باطن وظاهر القدم بدقة.</li>
+                        <li><strong>تنطيط الكرة (Juggling):</strong> الحفاظ على الكرة في الهواء باستخدام القدمين والفخذين لزيادة الإحساس بالكرة.</li>
+                        <li><strong>التمرير ضد الحائط (Wall Passing):</strong> ركل الكرة نحو جدار واستقبالها بلمسة واحدة ثم إعادة تمريرها لتطوير السرعة والدقة.</li>
+                    </ul>
+                </div>
+                <div class="exercise-card">
+                    <h3>🏋️‍♂️ ثالثاً: تمارين القوة البدنية والتحمل</h3>
+                    <ul>
+                        <li><strong>تمارين القرفصاء (Squats):</strong> تقوي عضلات الفخذين والرباط الركبي لتسديدات أقوى وقفزات أعلى.</li>
+                        <li><strong>الركض المتواصل (Cardio):</strong> الجري لمدة 30 إلى 45 دقيقة بسرعة متوسطة لبناء تكيّف رئوي عالي وتحمّل بدني طويل.</li>
+                        <li><strong>تمارين القفز الانفجاري (Box Jumps):</strong> القفز فوق صندوق مرتفع لزيادة قوة الانطلاق.</li>
+                    </ul>
+                </div>
             </div>
         </div>
 
         <div id="fitness" class="exercise-section">
-            <h2>خيارات التدريب البدني</h2>
+            <h2>برنامج التدريب البدني وبناء الأجسام 💪</h2>
             <div class="exercises-list">
-                <div class="exercise-item">💪 تمارين الصدر والكتف</div>
-                <div class="exercise-item">🦵 تمارين الرجل والسمانة</div>
-                <div class="exercise-item">🧘‍♂️ تمارين البطن والظهر</div>
+                <div class="exercise-card">
+                    <h3>🏋️‍♂️ أولاً: تمارين الصدر والكتف</h3>
+                    <ul>
+                        <li><strong>تمرين الضغط (Push-ups):</strong> التمرين الأساسي لتقوية عضلات الصدر، الترايسبس، والكتف الأمامي باستخدام وزن الجسم.</li>
+                        <li><strong>تمرين بنش برس (Bench Press):</strong> دفع الدمبلز أو البار لزيادة الحجم العضلي وقوة دفع الصدر.</li>
+                        <li><strong>الرفع الجانبي للكتف (Lateral Raises):</strong> استخدام الأوزان الخفيفة ورفع الذراعين جانباً للحصول على أكتاف عريضة وقوية.</li>
+                    </ul>
+                </div>
+                <div class="exercise-card">
+                    <h3>🦵 ثانياً: تمارين الرجل والسمانة</h3>
+                    <ul>
+                        <li><strong>الاندفاع الأمامي (Lunges):</strong> التقدم بخطوات واسعة لأسفل لتقوية الأرداف وعضلات الفخذ الأمامية والخلفية.</li>
+                        <li><strong>رفع السمانة (Calf Raises):</strong> الوقوف على أطراف الأصابع والارتفاع للأعلى لبناء عضلات سمانة قوية ومقاومة للإصابات.</li>
+                        <li><strong>الرفعة الميتة (Deadlift):</strong> تمرين جبار لتقوية الجزء الخلفي من الجسم بالكامل بما في ذلك عضلات الرجل الخلفية والمؤخرة.</li>
+                    </ul>
+                </div>
+                <div class="exercise-card">
+                    <h3>🧘‍♂️ ثالثاً: تمارين البطن والظهر</h3>
+                    <ul>
+                        <li><strong>تمارين العقلة (Pull-ups):</strong> أقوى تمرين لتوسيع وتقوية عضلات الظهر العلوية والمجنص.</li>
+                        <li><strong>تمرين الطحن للبطن (Crunches):</strong> استهداف عضلات البطن العلوية لتقوية الكور وإبراز التقسيمات.</li>
+                        <li><strong>تمرين اللوح (Plank):</strong> الثبات على الساعدين وأطراف القدمين لمدة دقيقة لتقوية عضلات البطن والظهر السفلي بالكامل وثبات الجسم.</li>
+                    </ul>
+                </div>
             </div>
         </div>
 
         <div id="boxing" class="exercise-section">
-            <h2>خيارات تعلم الملاكمة</h2>
+            <h2>برنامج تعلم رياضة الملاكمة 🥊</h2>
             <div class="exercises-list">
-                <div class="exercise-item">🥊 تعلم اللكمات الأساسية</div>
-                <div class="exercise-item">👟 تعلم التحركات في الحلبة</div>
+                <div class="exercise-card">
+                    <h3>👊 أولاً: تعلم اللكمات الأساسية</h3>
+                    <ul>
+                        <li><strong>اللكمة المستقيمة الأمامية (Jab):</strong> اللكمة الأهم لقياس المسافة وتشتيت الخصم، وتخرج من اليد الأمامية بخط مستقيم.</li>
+                        <li><strong>اللكمة المستقيمة الخلفية (Cross):</strong> اللكمة القاضية التي تأتي من اليد الخلفية مع دوران الحوض لزيادة القوة الانفجارية.</li>
+                        <li><strong>اللكمة الخطافية (Hook):</strong> لكمة دائرية جانبية تستهدف فك الخصم أو ضلوعه، وتعتمد على التفاف الجسم بشكل كامل.</li>
+                    </ul>
+                </div>
+                <div class="exercise-card">
+                    <h3>👟 ثانياً: تعلم التحركات في الحلبة (Footwork)</h3>
+                    <ul>
+                        <li><strong>وضعية الاستعداد (Boxing Stance):</strong> توزيع الوزن بالتساوي بين القدمين مع ثني الركبتين قليلاً وحماية الوجه باليدين.</li>
+                        <li><strong>التحرك الأمامي والخلفي:</strong> التحرك بالقدم الأمامية أولاً عند التقدم، والتحرك بالقدم الخلفية أولاً عند التراجع لعدم اختلال التوازن.</li>
+                        <li><strong>الخطوات الجانبية (Pivoting):</strong> الالتفاف على مشط القدم لزاوية 90 درجة للهروب من لكمات الخصم وفتح زوايا هجومية جديدة.</li>
+                    </ul>
+                </div>
             </div>
         </div>
 
         <div id="yoseikan" class="exercise-section">
-            <h2>خيارات تعلم اليوسيكان بيدو</h2>
+            <h2>برنامج تعلم فن اليوسيكان بيدو (Yoseikan Budo) 🥋</h2>
             <div class="exercises-list">
-                <div class="exercise-item">🛡️ أساسيات اليوسيكان بيدو</div>
-                <div class="exercise-item">⚔️ الأسلحة والمعدات المرتبطة</div>
-                <div class="exercise-item">📜 الكاتا من 1 إلى 10</div>
+                <div class="exercise-card">
+                    <h3>🛡️ أولاً: أساسيات اليوسيكان بيدو</h3>
+                    <p>هذا الفن يجمع بين رياضة الكاراتيه، الجودو، والأيكيدو في نظام متكامل:</p>
+                    <ul>
+                        <li><strong>الضربات وحركات الرمي (Atemi & Nage Washi):</strong> تعلم دمج الضربات باليد والرجل ثم الانتقال السريع لرمي الخصم على الأرض.</li>
+                        <li><strong>تثبيت المفاصل والأسقاط:</strong> إخضاع الخصم والدفاع عن النفس من خلال تقنيات السيطرة على المعصم والمرفق.</li>
+                    </ul>
+                </div>
+                <div class="exercise-card">
+                    <h3>⚔️ ثانياً: الأسلحة والمعدات المرتبطة</h3>
+                    <ul>
+                        <li><strong>عصا الكن (Ken):</strong> التدرب باستخدام عصا خشبية أو مبطنة لتعلم تقنيات السيف والمسافات الأمنة في القتال.</li>
+                        <li><strong>عصا التمبو (Jimbo):</strong> عصا قصيرة تُستخدم في الدفاع عن النفس ضد الهجمات القريبة والاشتباك السريع.</li>
+                        <li><strong>الدرع والمعدات الواقية:</strong> استخدام واقي الصدر والرأس للتمكن من تطبيق القتال الكامل والواقعي بأمان.</li>
+                    </ul>
+                </div>
+                <div class="exercise-card">
+                    <h3>📜 ثالثاً: الكاتا (من 1 إلى 10)</h3>
+                    <p>العمل على محاكاة المعارك الوهمية لتطوير التكنيك والانسيابية:</p>
+                    <ul>
+                        <li><strong>الكاتا التمهيدية (من 1 إلى 3):</strong> التركيز على ضبط التوازن، الخطوات الأساسية، واللكمات المستقيمة والدفاعات الأولى.</li>
+                        <li><strong>الكاتا المتوسطة (من 4 إلى 7):</strong> إدخال ضربات الرجل (الركلات المرتفعة والدائرية) مع تغيير اتجاهات القتال بسرعة.</li>
+                        <li><strong>الكاتا المتقدمة (من 8 إلى 10):</strong> دمج قتال الأسلحة (مثل الكن) مع التكنيكات اليدوية وحركات الإسقاط المعقدة للتناغم البدني الكامل.</li>
+                    </ul>
+                </div>
             </div>
         </div>
 

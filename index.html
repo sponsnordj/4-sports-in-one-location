@@ -8,35 +8,32 @@
         /* تصميم الموقع بالألوان الفاتحة والهادئة */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f4f7f9; /* خلفية هادئة مائلة للزرقة الفاتحة */
-            color: #2c3e50; /* نصوص داكنة واضحة */
+            background-color: #f4f7f9;
+            color: #2c3e50;
             margin: 0;
             padding: 0;
             text-align: center;
         }
         header {
-            background: linear-gradient(135deg, #4a90e2, #50e3c2); /* ألوان قوية وهادئة */
-            padding: 50px 20px;
+            background: linear-gradient(135deg, #4a90e2, #50e3c2);
+            padding: 45px 20px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
             color: white;
         }
         header h1 {
             margin: 0;
-            font-size: 2.6rem;
-            text-shadow: 1px 2px 4px rgba(0,0,0,0.1);
+            font-size: 2.4rem;
         }
         header p {
-            font-size: 1.2rem;
-            margin-top: 12px;
-            color: #ffffff;
-            font-weight: 500;
+            font-size: 1.1rem;
+            margin-top: 10px;
         }
         .container {
             max-width: 850px;
-            margin: 40px auto;
+            margin: 30px auto;
             padding: 0 20px;
         }
-        /* تصميم قائمة الأزرار الرئيسية */
+        /* تصميم الأزرار الرئيسية */
         .sports-menu {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -53,17 +50,15 @@
             border-radius: 16px;
             cursor: pointer;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
         }
         .sport-btn:hover {
             border-color: #4a90e2;
             background-color: #f0f7ff;
             transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(74, 144, 226, 0.1);
         }
         /* زر الرجوع للرئيسية */
         .back-btn {
-            display: none; /* مخفي في البداية */
+            display: none;
             background-color: #7f8c8d;
             color: white;
             border: none;
@@ -73,16 +68,43 @@
             border-radius: 30px;
             cursor: pointer;
             margin-bottom: 25px;
-            transition: background 0.2s;
         }
-        .back-btn:hover {
-            background-color: #95a5a6;
+        
+        /* تصميم مؤقت الوقت (Timer) */
+        .timer-container {
+            display: none; /* يظهر فقط داخل الأقسام */
+            background-color: #ffffff;
+            padding: 15px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            margin-bottom: 25px;
+            border: 1px solid #e9edf0;
         }
+        .timer-display {
+            font-size: 2.2rem;
+            font-weight: bold;
+            color: #e74c3c;
+            margin: 10px 0;
+        }
+        .timer-btn {
+            background-color: #2ecc71;
+            color: white;
+            border: none;
+            padding: 8px 18px;
+            font-size: 0.9.5rem;
+            border-radius: 6px;
+            cursor: pointer;
+            margin: 0 5px;
+            font-weight: bold;
+        }
+        .timer-btn.reset { background-color: #e74c3c; }
+        .timer-btn.pause { background-color: #f39c12; }
+
         /* تصميم أقسام التمارين */
         .exercise-section {
             display: none;
             background-color: #ffffff;
-            padding: 35px;
+            padding: 30px;
             border-radius: 20px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.04);
             margin-top: 20px;
@@ -93,14 +115,13 @@
             color: #4a90e2;
             margin-top: 0;
             text-align: center;
-            font-size: 1.7rem;
             border-bottom: 2px solid #f4f7f9;
             padding-bottom: 15px;
         }
         .exercises-list {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 20px;
+            gap: 25px;
             margin-top: 25px;
         }
         .exercise-card {
@@ -116,20 +137,25 @@
             color: #4a90e2;
             margin-top: 0;
             margin-bottom: 12px;
-            font-size: 1.3rem;
         }
-        .exercise-card p {
-            color: #5a6c7d;
-            font-size: 1rem;
-            line-height: 1.6;
+        
+        /* تنسيق مشغل الفيديو من اليوتيوب */
+        .video-wrapper {
+            margin-top: 15px;
+            position: relative;
+            padding-bottom: 56.25%; /* نسبة أبعاد الفيديو 16:9 */
+            height: 0;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
         }
-        .exercise-card ul {
-            margin: 0;
-            padding-right: 20px;
-            color: #6a7c8d;
-        }
-        .exercise-card li {
-            margin-bottom: 8px;
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
         }
 
         /* أقسام اتصل بنا والتعليقات */
@@ -150,48 +176,25 @@
         .info-card h4 {
             margin-top: 0;
             color: #4a90e2;
-            font-size: 1.2rem;
             border-bottom: 1px solid #f4f7f9;
             padding-bottom: 10px;
         }
         .email-link {
-            display: inline-block;
-            margin-top: 10px;
             color: #4a90e2;
             text-decoration: none;
             font-weight: bold;
         }
-        /* نموذج التقييم والتعليقات */
         .comment-form input, .comment-form textarea, .comment-form select {
-            width: 100%;
-            padding: 10px;
-            margin-top: 8px;
-            margin-bottom: 12px;
-            border: 1px solid #dcdde1;
-            border-radius: 8px;
-            font-family: inherit;
-            box-sizing: border-box;
+            width: 100%; padding: 10px; margin-top: 8px; margin-bottom: 12px;
+            border: 1px solid #dcdde1; border-radius: 8px; font-family: inherit; box-sizing: border-box;
         }
         .comment-form button {
-            background-color: #4a90e2;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: bold;
-            width: 100%;
-        }
-        .comment-form button:hover {
-            background-color: #357abd;
+            background-color: #4a90e2; color: white; border: none; padding: 10px 20px;
+            border-radius: 8px; cursor: pointer; font-weight: bold; width: 100%;
         }
 
         footer {
-            margin-top: 60px;
-            padding: 25px;
-            color: #a0aab2;
-            font-size: 0.9rem;
-            border-top: 1px solid #e9edf0;
+            margin-top: 60px; padding: 25px; color: #a0aab2; font-size: 0.9rem; border-top: 1px solid #e9edf0;
         }
     </style>
 </head>
@@ -206,6 +209,22 @@
         
         <button id="backBtn" class="back-btn" onclick="goBack()">🔙 الرجوع للرئيسية</button>
 
+        <div id="timerContainer" class="timer-container">
+            <h3>⏱️ مؤقت التدريب والراحة الذكي</h3>
+            <p>اضبط وقت التحدي المخصص لتمرينك الحالي:</p>
+            <div>
+                <button class="timer-btn" onclick="setTimer(30)">30 ثانية</button>
+                <button class="timer-btn" onclick="setTimer(60)">دقيقة واحدة</button>
+                <button class="timer-btn" onclick="setTimer(120)">دقيقتان</button>
+            </div>
+            <div id="timerDisplay" class="timer-display">01:00</div>
+            <div>
+                <button class="timer-btn" onclick="startTimer()">▶️ ابدأ</button>
+                <button class="timer-btn pause" onclick="pauseTimer()">⏸️ إيقاف مؤقت</button>
+                <button class="timer-btn reset" onclick="resetTimer()">🔄 إعادة ضبط</button>
+            </div>
+        </div>
+
         <div id="sportsMenu" class="sports-menu">
             <button class="sport-btn" onclick="showSport('football')">⚽ كرة القدم</button>
             <button class="sport-btn" onclick="showSport('fitness')">💪 التدريب البدني</button>
@@ -217,28 +236,11 @@
             <h2>برنامج تدريب كرة القدم ⚽</h2>
             <div class="exercises-list">
                 <div class="exercise-card">
-                    <h3>🏃‍♂️ أولاً: تمارين السرعة والرشاقة</h3>
-                    <ul>
-                        <li><strong>الجري الارتدادي (Shuttle Runs):</strong> الجري بأقصى سرعة لمسافة 10 أمتار، ثم العودة للخلف لزيادة التوازن والتحكم السريع.</li>
-                        <li><strong>تمارين السلم الرياضي (Agility Ladder):</strong> التحرك السريع بالقدمين داخل وخارج مربعات السلم لتطوير خفة حركة القدمين (Footwork).</li>
-                        <li><strong>الانطلاقات السريعة (Sprints):</strong> الجري بأقصى قوة لمسافة 30 متراً لتطوير الانفجارية العضلية.</li>
-                    </ul>
-                </div>
-                <div class="exercise-card">
-                    <h3>⚽ ثانياً: تمارين التحكم بالكرة (المهارة)</h3>
-                    <ul>
-                        <li><strong>المراوغة بين الأقماع (Cone Dribbling):</strong> وضع 5 أقماع على خط مستقيم والمراوغة بينها باستخدام باطن وظاهر القدم بدقة.</li>
-                        <li><strong>تنطيط الكرة (Juggling):</strong> الحفاظ على الكرة في الهواء باستخدام القدمين والفخذين لزيادة الإحساس بالكرة.</li>
-                        <li><strong>التمرير ضد الحائط (Wall Passing):</strong> ركل الكرة نحو جدار واستقبالها بلمسة واحدة ثم إعادة تمريرها لتطوير السرعة والدقة.</li>
-                    </ul>
-                </div>
-                <div class="exercise-card">
-                    <h3>🏋️‍♂️ ثالثاً: تمارين القوة البدنية والتحمل</h3>
-                    <ul>
-                        <li><strong>تمارين القرفصاء (Squats):</strong> تقوي عضلات الفخذين والرباط الركبي لتسديدات أقوى وقفزات أعلى.</li>
-                        <li><strong>الركض المتواصل (Cardio):</strong> الجري لمدة 30 إلى 45 دقيقة بسرعة متوسطة لبناء تكيّف رئوي عالي وتحمّل بدني طويل.</li>
-                        <li><strong>تمارين القفز الانفجاري (Box Jumps):</strong> القفز فوق صندوق مرتفع لزيادة قوة الانطلاق.</li>
-                    </ul>
+                    <h3>🏃‍♂️ تمارين السرعة والرشاقة</h3>
+                    <p>فيديو توضيحي لأهم تمارين الرشاقة بالكرة وبدونها لزيادة السرعة:</p>
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/H7Z9GAnasf8" allowfullscreen></iframe>
+                    </div>
                 </div>
             </div>
         </div>
@@ -247,28 +249,11 @@
             <h2>برنامج التدريب البدني وبناء الأجسام 💪</h2>
             <div class="exercises-list">
                 <div class="exercise-card">
-                    <h3>🏋️‍♂️ أولاً: تمارين الصدر والكتف</h3>
-                    <ul>
-                        <li><strong>تمرين الضغط (Push-ups):</strong> التمرين الأساسي لتقوية عضلات الصدر، الترايسبس، والكتف الأمامي باستخدام وزن الجسم.</li>
-                        <li><strong>تمرين بنش برس (Bench Press):</strong> دفع الدمبلز أو البار لزيادة الحجم العضلي وقوة دفع الصدر.</li>
-                        <li><strong>الرفع الجانبي للكتف (Lateral Raises):</strong> استخدام الأوزان الخفيفة ورفع الذراعين جانباً للحصول على أكتاف عريضة وقوية.</li>
-                    </ul>
-                </div>
-                <div class="exercise-card">
-                    <h3>🦵 ثانياً: تمارين الرجل والسمانة</h3>
-                    <ul>
-                        <li><strong>الاندفاع الأمامي (Lunges):</strong> التقدم بخطوات واسعة لأسفل لتقوية الأرداف وعضلات الفخذ الأمامية والخلفية.</li>
-                        <li><strong>رفع السمانة (Calf Raises):</strong> الوقوف على أطراف الأصابع والارتفاع للأعلى لبناء عضلات سمانة قوية ومقاومة للإصابات.</li>
-                        <li><strong>الرفعة الميتة (Deadlift):</strong> تمرين جبار لتقوية الجزء الخلفي من الجسم بالكامل بما في ذلك عضلات الرجل الخلفية والمؤخرة.</li>
-                    </ul>
-                </div>
-                <div class="exercise-card">
-                    <h3>🧘‍♂️ ثالثاً: تمارين البطن والظهر</h3>
-                    <ul>
-                        <li><strong>تمارين العقلة (Pull-ups):</strong> أقوى تمرين لتوسيع وتقوية عضلات الظهر العلوية والمجنص.</li>
-                        <li><strong>تمرين الطحن للبطن (Crunches):</strong> استهداف عضلات البطن العلوية لتقوية الكور وإبراز التقسيمات.</li>
-                        <li><strong>تمرين اللوح (Plank):</strong> الثبات على الساعدين وأطراف القدمين لمدة دقيقة لتقوية عضلات البطن والظهر السفلي بالكامل وثبات الجسم.</li>
-                    </ul>
+                    <h3>🏋️‍♂️ تمارين الصدر والكتف بالمنزل</h3>
+                    <p>فيديو يشرح كيفية أداء تمارين الضغط والكتف بشكل صحيح وبدون معدات:</p>
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/UycOCFmGnyg" allowfullscreen></iframe>
+                    </div>
                 </div>
             </div>
         </div>
@@ -277,85 +262,48 @@
             <h2>برنامج تعلم رياضة الملاكمة 🥊</h2>
             <div class="exercises-list">
                 <div class="exercise-card">
-                    <h3>👊 أولاً: تعلم اللكمات الأساسية</h3>
-                    <ul>
-                        <li><strong>اللكمة المستقيمة الأمامية (Jab):</strong> اللكمة الأهم لقياس المسافة وتشتيت الخصم، وتخرج من اليد الأمامية بخط مستقيم.</li>
-                        <li><strong>اللكمة المستقيمة الخلفية (Cross):</strong> اللكمة القاضية التي تأتي من اليد الخلفية مع دوران الحوض لزيادة القوة الانفجارية.</li>
-                        <li><strong>اللكمة الخطافية (Hook):</strong> لكمة دائرية جانبية تستهدف فك الخصم أو ضلوعه، وتعتمد على التفاف الجسم بشكل كامل.</li>
-                    </ul>
-                </div>
-                <div class="exercise-card">
-                    <h3>👟 ثانياً: تعلم التحركات في الحلبة (Footwork)</h3>
-                    <ul>
-                        <li><strong>وضعية الاستعداد (Boxing Stance):</strong> توزيع الوزن بالتساوي بين القدمين مع ثني الركبتين قليلاً وحماية الوجه باليدين.</li>
-                        <li><strong>التحرك الأمامي والخلفي:</strong> التحرك بالقدم الأمامية أولاً عند التقدم، والتحرك بالقدم الخلفية أولاً عند التراجع لعدم اختلال التوازن.</li>
-                        <li><strong>الخطوات الجانبية (Pivoting):</strong> الالتفاف على مشط القدم لزاوية 90 درجة للهروب من لكمات الخصم وفتح زوايا هجومية جديدة.</li>
-                    </ul>
+                    <h3>👊 أساسيات اللكمات والتحركات للمبتدئين</h3>
+                    <p>تعلم وقفة الملاكمة الصحيحة وكيفية تسديد اللكمات الأساسية:</p>
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/7M_3f_E6g8g" allowfullscreen></iframe>
+                    </div>
                 </div>
             </div>
         </div>
 
         <div id="yoseikan" class="exercise-section">
-            <h2>برنامج تعلم فن اليوسيكان بيدو (Yoseikan Budo) 🥋</h2>
+            <h2>برنامج تعلم فن اليوسيكان بيدو 🥋</h2>
             <div class="exercises-list">
                 <div class="exercise-card">
-                    <h3>🛡️ أولاً: أساسيات اليوسيكان بيدو</h3>
-                    <p>هذا الفن يجمع بين رياضة الكاراتيه، الجودو، والأيكيدو في نظام متكامل:</p>
-                    <ul>
-                        <li><strong>الضربات وحركات الرمي (Atemi & Nage Washi):</strong> تعلم دمج الضربات باليد والرجل ثم الانتقال السريع لرمي الخصم على الأرض.</li>
-                        <li><strong>تثبيت المفاصل والأسقاط:</strong> إخضاع الخصم والدفاع عن النفس من خلال تقنيات السيطرة على المعصم والمرفق.</li>
-                    </ul>
-                </div>
-                <div class="exercise-card">
-                    <h3>⚔️ ثانياً: الأسلحة والمعدات المرتبطة</h3>
-                    <ul>
-                        <li><strong>عصا الكن (Ken):</strong> التدرب باستخدام عصا خشبية أو مبطنة لتعلم تقنيات السيف والمسافات الأمنة في القتال.</li>
-                        <li><strong>عصا التمبو (Jimbo):</strong> عصا قصيرة تُستخدم في الدفاع عن النفس ضد الهجمات القريبة والاشتباك السريع.</li>
-                        <li><strong>الدرع والمعدات الواقية:</strong> استخدام واقي الصدر والرأس للتمكن من تطبيق القتال الكامل والواقعي بأمان.</li>
-                    </ul>
-                </div>
-                <div class="exercise-card">
-                    <h3>📜 ثالثاً: الكاتا (من 1 إلى 10)</h3>
-                    <p>العمل على محاكاة المعارك الوهمية لتطوير التكنيك والانسيابية:</p>
-                    <ul>
-                        <li><strong>الكاتا التمهيدية (من 1 إلى 3):</strong> التركيز على ضبط التوازن، الخطوات الأساسية، واللكمات المستقيمة والدفاعات الأولى.</li>
-                        <li><strong>الكاتا المتوسطة (من 4 إلى 7):</strong> إدخال ضربات الرجل (الركلات المرتفعة والدائرية) مع تغيير اتجاهات القتال بسرعة.</li>
-                        <li><strong>الكاتا المتقدمة (من 8 إلى 10):</strong> دمج قتال الأسلحة (مثل الكن) مع التكنيكات اليدوية وحركات الإسقاط المعقدة للتناغم البدني الكامل.</li>
-                    </ul>
+                    <h3>🛡️ استعراض حركات وأساسيات اليوسيكان بيدو</h3>
+                    <p>شاهد الفنون القتالية المتكاملة المدمجة في اللعبة:</p>
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/S266vI6K6QY" allowfullscreen></iframe>
+                    </div>
                 </div>
             </div>
         </div>
 
         <div class="meta-sections">
-            
             <div class="info-card">
                 <h4>📞 اتصل بنا</h4>
-                <p>يسعدنا تواصلكم معنا لأي استفسار أو تدريب خاص عبر البريد الإلكتروني التالي:</p>
+                <p>يسعدنا تواصلكم معنا عبر البريد الإلكتروني التالي:</p>
                 <a href="mailto:nwraldynbnywsf67@gmail.com" class="email-link">nwraldynbnywsf67@gmail.com</a>
             </div>
 
             <div class="info-card">
-                <h4>✍️ الآراء والتقييمات والتصحيحات</h4>
+                <h4>✍️ الآراء والتقييمات</h4>
                 <form class="comment-form" onsubmit="alert('شكراً لتقييمك! تم إرسال تعليقك بنجاح.'); return false;">
-                    <label>الاسم الكامل:</label>
-                    <input type="text" placeholder="اكتب اسمك هنا" required>
-                    
-                    <label>التقييم:</label>
+                    <input type="text" placeholder="الاسم الكامل" required>
                     <select required>
                         <option value="5">⭐⭐⭐⭐⭐ ممتاز جداً</option>
                         <option value="4">⭐⭐⭐⭐ جيد جداً</option>
                         <option value="3">⭐⭐⭐ جيد</option>
-                        <option value="2">⭐⭐ مقبول</option>
-                        <option value="1">⭐ ضعيف</option>
                     </select>
-
-                    <label>اترك تعليقك أو أي تصحيح تريده:</label>
-                    <textarea rows="4" placeholder="اكتب تعليقاتك أو المقترحات هنا..." required></textarea>
-                    
+                    <textarea rows="3" placeholder="اكتب تعليقاتك أو المقترحات هنا..." required></textarea>
                     <button type="submit">إرسال التقييم</button>
                 </form>
             </div>
-
         </div>
 
     </div>
@@ -365,37 +313,71 @@
     </footer>
 
     <script>
+        let countdown;
+        let timeLeft = 60; 
+        let isRunning = false;
+
         function showSport(sportId) {
-            // 1. إخفاء قائمة الأزرار الرئيسية بالكامل
             document.getElementById('sportsMenu').style.display = 'none';
-            
-            // 2. إخفاء أي أقسام تمارين أخرى احتياطاً
             var sections = document.getElementsByClassName('exercise-section');
-            for (var i = 0; i < sections.length; i++) {
-                sections[i].style.display = 'none';
-            }
+            for (var i = 0; i < sections.length; i++) { sections[i].style.display = 'none'; }
             
-            // 3. إظهار القسم الرياضي الذي تم ضغطه
             document.getElementById(sportId).style.display = 'block';
-            
-            // 4. إظهار زر "الرجوع للرئيسية"
             document.getElementById('backBtn').style.display = 'inline-block';
+            document.getElementById('timerContainer').style.display = 'block'; // إظهار العداد
         }
 
         function goBack() {
-            // 1. إخفاء جميع أقسام التمارين
             var sections = document.getElementsByClassName('exercise-section');
-            for (var i = 0; i < sections.length; i++) {
-                sections[i].style.display = 'none';
-            }
+            for (var i = 0; i < sections.length; i++) { sections[i].style.display = 'none'; }
             
-            // 2. إخفاء زر الرجوع نفسه
             document.getElementById('backBtn').style.display = 'none';
-            
-            // 3. إعادة إظهار قائمة أزرار الرياضات الأربعة الرئيسية
+            document.getElementById('timerContainer').style.display = 'none'; // إخفاء العداد
             document.getElementById('sportsMenu').style.display = 'grid';
+            resetTimer();
+        }
+
+        /* وظائف العداد */
+        function updateDisplay() {
+            let minutes = Math.floor(timeLeft / 60);
+            let seconds = timeLeft % 60;
+            document.getElementById('timerDisplay').innerText = 
+                `${minutes < 10 ? '0' : ''}${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+        }
+
+        function setTimer(seconds) {
+            clearInterval(countdown);
+            isRunning = false;
+            timeLeft = seconds;
+            updateDisplay();
+        }
+
+        function startTimer() {
+            if (isRunning) return;
+            isRunning = true;
+            countdown = setInterval(() => {
+                if (timeLeft <= 0) {
+                    clearInterval(countdown);
+                    isRunning = false;
+                    alert("انتهى وقت التمرين! خذ قسطاً من الراحة.");
+                    return;
+                }
+                timeLeft--;
+                updateDisplay();
+            }, 1000);
+        }
+
+        function pauseTimer() {
+            clearInterval(countdown);
+            isRunning = false;
+        }
+
+        function resetTimer() {
+            clearInterval(countdown);
+            isRunning = false;
+            timeLeft = 60;
+            updateDisplay();
         }
     </script>
-
 </body>
 </html>

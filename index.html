@@ -376,14 +376,22 @@
 
             <div class="info-card">
                 <h4>✍️ الآراء والتقييمات</h4>
-                <form class="comment-form" onsubmit="alert('شكراً لتقييمك! تم إرسال تعليقك بنجاح.'); return false;">
-                    <input type="text" placeholder="الاسم الكامل" required>
-                    <select required>
+                <form class="comment-form" action="https://formsubmit.co/nwraldynbnywsf67@gmail.com" method="POST">
+                    
+                    <input type="hidden" name="_next" value="window.location.href">
+                    
+                    <input type="hidden" name="_captcha" value="false">
+
+                    <input type="text" name="الاسم" placeholder="الاسم الكامل" required>
+                    
+                    <select name="التقييم" required>
                         <option value="5">⭐⭐⭐⭐⭐ ممتاز جداً</option>
                         <option value="4">⭐⭐⭐⭐ جيد جداً</option>
                         <option value="3">⭐⭐⭐ جيد</option>
                     </select>
-                    <textarea rows="3" placeholder="اكتب تعليقاتك أو المقترحات هنا..." required></textarea>
+                    
+                    <textarea name="الرسالة" rows="3" placeholder="اكتب تعليقاتك أو المقترحات هنا..." required></textarea>
+                    
                     <button type="submit">إرسال التقييم</button>
                 </form>
             </div>

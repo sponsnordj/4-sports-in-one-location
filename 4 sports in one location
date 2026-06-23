@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>موقع التدريب الرياضي</title>
+    <style>
+        /* تصميم الموقع والألوان */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #1a1a1a;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        header {
+            background: linear-gradient(135deg, #ff4e50, #f9d423);
+            padding: 40px 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        header p {
+            font-size: 1.2rem;
+            margin-top: 10px;
+            color: #eeeeee;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 20px;
+        }
+        /* تصميم أزرار الرياضات الرئيسية */
+        .sports-menu {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+        .sport-btn {
+            background-color: #2c3e50;
+            color: white;
+            border: 2px solid #34495e;
+            padding: 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .sport-btn:hover {
+            background-color: #e74c3c;
+            border-color: #e74c3c;
+            transform: translateY(-5px);
+        }
+        /* تصميم أقسام التمارين المخفية */
+        .exercise-section {
+            display: none; /* مخفي افتراضياً ويظهر عند الضغط */
+            background-color: #2c2c2c;
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 5px solid #e74c3c;
+            margin-top: 20px;
+            animation: fadeIn 0.5s ease;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .exercise-section h2 {
+            color: #f9d423;
+            margin-top: 0;
+        }
+        .exercises-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .exercise-item {
+            background-color: #383838;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            border: 1px solid #444;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .exercise-item:hover {
+            background-color: #4e4e4e;
+            color: #f9d423;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>أهلاً وسمهلاً بكم أيها الرياضيون 👋</h1>
+        <p>اختر الرياضة التي تريد تعلمها وابدأ رحلتك التدريبية اليوم</p>
+    </header>
+
+    <div class="container">
+        
+        <div class="sports-menu">
+            <button class="sport-btn" onclick="showSport('football')">⚽ كرة القدم</button>
+            <button class="sport-btn" onclick="showSport('fitness')">💪 التدريب البدني</button>
+            <button class="sport-btn" onclick="showSport('boxing')">🥊 الملاكمة</button>
+            <button class="sport-btn" onclick="showSport('yoseikan')">🥋 اليوسيكان بيدو</button>
+        </div>
+
+        <div id="football" class="exercise-section">
+            <h2>خيارات تعلم كرة القدم</h2>
+            <div class="exercises-list">
+                <div class="exercise-item">🏃‍♂️ تمارين السرعة</div>
+                <div class="exercise-item">⚽ تمارين الكرة</div>
+                <div class="exercise-item">🏋️‍♂️ تمارين القوة البدنية</div>
+            </div>
+        </div>
+
+        <div id="fitness" class="exercise-section">
+            <h2>خيارات التدريب البدني</h2>
+            <div class="exercises-list">
+                <div class="exercise-item">💪 تمارين الصدر والكتف</div>
+                <div class="exercise-item">🦵 تمارين الرجل والسمانة</div>
+                <div class="exercise-item">🧘‍♂️ تمارين البطن والظهر</div>
+            </div>
+        </div>
+
+        <div id="boxing" class="exercise-section">
+            <h2>خيارات تعلم الملاكمة</h2>
+            <div class="exercises-list">
+                <div class="exercise-item">🥊 تعلم اللكمات الأساسية</div>
+                <div class="exercise-item">👟 تعلم التحركات في الحلبة</div>
+            </div>
+        </div>
+
+        <div id="yoseikan" class="exercise-section">
+            <h2>خيارات تعلم اليوسيكان بيدو</h2>
+            <div class="exercises-list">
+                <div class="exercise-item">🛡️ أساسيات اليوسيكان بيدو</div>
+                <div class="exercise-item">⚔️ الأسلحة والمعدات المرتبطة</div>
+                <div class="exercise-item">📜 الكاتا من 1 إلى 10</div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function showSport(sportId) {
+            // إخفاء جميع الأقسام أولاً
+            var sections = document.getElementsByClassName('exercise-section');
+            for (var i = 0; i < sections.length; i++) {
+                sections[i].style.display = 'none';
+            }
+            // إظهار القسم الذي تم اختياره
+            document.getElementById(sportId).style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>
